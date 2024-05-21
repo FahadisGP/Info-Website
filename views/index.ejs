@@ -1,1 +1,69 @@
+<% if (index == 1) { %>
+    <div class="instructorPage">
+        <div class="instructorName">
+            <i class="fa-solid fa-user"></i>
+            <h1><%= instructor.name %></h1>
+            <div class="optionsContainer">
+                <button id="optionsBtn"><i class="fa-solid fa-ellipsis"></i></button>
+                <div class="dropdownOption">
+                    <ul>
+                        <li> <button id="getEditInstructorPageBtn"><i class="fa-solid fa-pen-to-square"></i>تحديث المعلومات</button></li>
+                        <li> <button id="deleteInstructorBtn"><i class="fa-solid fa-trash-can"></i> حذف الصفحة</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="dataGrid">
+            <div class="gridItem">
+                <div class="dataLabel">
+                    <i class="fa-solid fa-building"></i>
+                    <h2>المبنى</h2>
+                </div>
+                <p><%= instructor.building %></p>
+            </div>
+        
+    
+        
+            <div class="gridItem">
+                <div class="dataLabel">
+                    <i class="fa-solid fa-chair"></i>
+                    <h2>رقم المكتب</h2><br>
+                </div>
+                <p><%= instructor.officeNum %></p>
+            </div>
+        
+    
+        
+            <div class="gridItem">
+                <div class="dataLabel">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h2>البريد الإلكتروني</h2>
+                </div>
+                <a href="mailto:<%= instructor.email %>"><%= instructor.email %></a>
+            </div>
+        
+    
+        
+            <div class="gridItem">
+                <div class="dataLabel">
+                    <i class="fa-solid fa-phone"></i>
+                    <h2>الهاتف</h2>
+                </div>
+                <a dir="ltr" href="tel:<%= instructor.phone %>"><%= instructor.phone %></a>
+            </div>
+        </div>
+    </div>
 
+    <div class="deletePage">
+        <p>حذف الصفحة</p>
+        <div class="buttonsRow">
+            <button id="yesDelete">حذف</button>
+            <button id="noCancel">إلغاء</button>
+        </div>
+    </div>
+    
+    
+<% } else if(index == 2) {%> 
+    <button id="getAddInstructorPageBtn" class="AddBtn">إنشاء صفحة</button>
+<% } %>

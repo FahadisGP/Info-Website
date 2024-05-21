@@ -4,12 +4,28 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const connectDB = require('./server/config/db');
 
+const session = require('express-session');
 const app = express();
+const MongoDBStore = require('connect-mongodb-session')(session);
+
+const store = new MongoDBStore({
+  uri: process.env.MONGODB_URI,
+  collection: 'sessions'
+});
+
+app.use(session({
+  secret: '*11info22#',
+  resave: false,
+  saveUninitialized: false,
+  store: store,
+  cookie: { maxAge: 1000 * 60 * 60 * 24 } 
+}));
 
 const port = 5000 || process.env.PORT;
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+
 
 connectDB();  
 
