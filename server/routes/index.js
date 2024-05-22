@@ -183,6 +183,59 @@ router.post('/addInstructor', async (req, res) => {
 });
 
 
+router.get('/editInstructor', isLoggedIn, async (req, res) => {
+    
+    let layout;
+    if(req.session.user) {
+        layout = '../views/layouts/mainLoggedIn'
+    }
+    else {
+        layout = '../views/layouts/main'
+    }
+    
+    const instructor = await Instructor.findOne().where({user: req.session.user.id});
+    
+    if(instructor) {
+        const locals = { title: 'تعديل محاضر' };
+        res.render('body/editInstructor', {
+            instructor,
+            locals,
+            layout: layout
+        });
+    }
+    else { 
+        res.redirect(`/addinstructor`)
+    }
+
+
+
+});
+
+router.put('/editInstructor', async (req, res) => {
+    
+    try {
+        await Instructor.findOneAndUpdate({ user: req.session.user.id }, req.body);
+
+        res.json({ message: 'Instructor updated successfully' });
+    } catch(error) {
+        console.log(error);
+    }
+});
+
+router.delete('/deleteInstructor', async (req, res) => {
+    
+    try {
+        await Instructor.deleteOne({ user: req.session.user.id });
+
+        await User.findByIdAndUpdate( req.session.user.id, {
+            $set: { profile: null } 
+        });
+        res.json({ message: 'Instructor deleted successfully' });
+    } catch (error) {
+        console.log(error)
+    }
+});
+
 router.post('/signup', async(req, res) => {
     const username = req.body.username;
     const password = req.body.password;
