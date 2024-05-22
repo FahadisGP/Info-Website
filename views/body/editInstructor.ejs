@@ -11,7 +11,7 @@
                 <i class="fa-solid fa-building"></i>
                 <h2>المبنى</h2>
             </div>
-            <input type="text" placeholder="كلية الشريعة" value="<%= instructor.building %>">
+            <input type="text" placeholder="كلية العلوم" value="<%= instructor.building %>">
         </div>
     
 
@@ -45,4 +45,104 @@
         </div>
     </div>
 
+    <div class="addEventContainer">
+        <div class="eventInputDiv">
+            <label for="titleInput">العنوان</label>
+            <input type="text" id="titleInput" placeholder="العنوان">
+        </div>
+
+        <div class="eventInputDiv">
+            <label for="weekDays">الأيام</label>
+            <div class="weekDays-selector">
+                <input type="checkbox" id="weekday-sun" class="weekday" value="1">
+                <label for="weekday-sun">الأحد</label>
+                <input type="checkbox" id="weekday-mon" class="weekday" value="2">
+                <label for="weekday-mon">الاثنين</label>
+                <input type="checkbox" id="weekday-tue" class="weekday" value="3">
+                <label for="weekday-tue">الثلاثاء</label>
+                <input type="checkbox" id="weekday-wed" class="weekday" value="4">
+                <label for="weekday-wed">الاربعاء</label>
+                <input type="checkbox" id="weekday-thu" class="weekday" value="5">
+                <label for="weekday-thu">الخميس</label>
+            </div>
+        </div>
+        <div class="eventInputDiv">
+            <label for="startTime">البداية</label>
+            <input id="startTime" type="time">            
+        </div>
+
+
+        <div class="eventInputDiv">
+            <label for="endTime">النهاية</label>
+            <input id="endTime" type="time">
+        </div>
+        
+
+        <div class="eventInputDiv">
+            <label for="colorPiker">اللون</label>
+            <input id="colorPiker" type="color" value="#19a2c8">
+        </div>
+
+        <button id="AddEventBtn" class="AddBtn">إضافة</button>
+
+
+        
+    </div>
+
+    <div class="tableContainer">
+        <div class="table">
+            <div class="hoursRow">
+
+                <ul>
+                    <li></li>
+                    <li>8:00ص</li>
+                    <li>9:00ص</li>
+                    <li>10:00ص</li>
+                    <li>11:00ص</li>
+                    <li>12:00ص</li>
+                    <li>1:00م</li>
+                </ul>
+    
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الأحد</p>
+                </div>
+                <div class="classRowDiv" id="row1"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الاثنين</p>
+                </div>
+                <div class="classRowDiv" id="row2"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الثلاثاء</p>
+                </div>
+                <div class="classRowDiv" id="row3"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الاربعاء</p>
+                </div>
+                <div class="classRowDiv" id="row4"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الخميس</p>
+                </div>
+                <div class="classRowDiv" id="row5"></div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    var officeHoursData = <%- JSON.stringify(instructor.officeHours) %>;
+</script>

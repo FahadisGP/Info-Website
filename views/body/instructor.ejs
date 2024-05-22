@@ -44,7 +44,64 @@
         </div>
     </div>
 
+    <div class="tableContainer">
+        <div class="table">
+            <div class="hoursRow">
+                <ul>
+                    <li></li>
+                    <li>8:00ص</li>
+                    <li>9:00ص</li>
+                    <li>10:00ص</li>
+                    <li>11:00ص</li>
+                    <li>12:00م</li>
+                    <li>1:00م</li>
+                </ul>
+
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الأحد</p>
+                </div>
+                <div class="classRowDiv" id="row1"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الاثنين</p>
+                </div>
+                <div class="classRowDiv" id="row2"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الثلاثاء</p>
+                </div>
+                <div class="classRowDiv" id="row3"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الاربعاء</p>
+                </div>
+                <div class="classRowDiv" id="row4"></div>
+            </div>
+    
+            <div class="daysRows">
+                <div class="dayDiv">
+                    <p>الخميس</p>
+                </div>
+                <div class="classRowDiv" id="row5"></div>
+            </div>
+        </div>
+        
+    </div>
 
 </div>
 
+
+
+<script>
+    var officeHoursData = <%- JSON.stringify(instructor.officeHours) %>;
+</script>
 

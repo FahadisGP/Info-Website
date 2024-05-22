@@ -272,6 +272,111 @@ input:-webkit-autofill:active{
 
 
 
+.tableContainer {
+    background-color: var(--background-color);
+    margin-top: 20px;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.300);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px 0;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bs-primary-blue) var(--background-color);
+}
+
+.table{
+    width: fit-content;
+    min-width: 800px;
+}
+
+.hoursRow ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+}
+
+.hoursRow ul li{
+    text-align: center;
+    width: 100%;
+    min-width: 100px;
+    font-size: 12px;
+    padding-bottom: 5px;
+    border-right: 0.5px solid gainsboro;
+    color: var(--bs-primary-blue);
+}
+
+.hoursRow ul li:first-child{
+    border: none;
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    position: sticky;
+    right: 0;
+    background-color: var(--background-color);
+    opacity: 90%;
+}
+
+.daysRows {
+    width: 100%;
+    height: 60px;
+    border-top: 0.5px solid gainsboro;
+    display: flex;
+}
+
+.dayDiv {
+    height: 100%;
+    width: 70px;
+    max-width: 70px;
+    min-width: 70px;
+    background-color: var(--background-color);
+    position: sticky;
+    border-left: 0.5px solid gainsboro;
+    right: 0;
+    z-index: 999;
+    opacity: 90%;
+}
+
+.dayDiv p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--bs-primary-blue);
+}
+
+.classRowDiv {
+    width: 100%;
+    padding: 5px 0;
+    position: relative;
+}
+
+.eventDiv {
+    position: absolute;
+    background-color: var(--bs-primary-blue);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+    border-radius: 2.5px;
+    font-size: 10px;
+    box-shadow: 0 0 3px 1px rgb(173, 173, 173);
+}
+
+.deleteEventBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--background-color);
+    border: 0.5px solid rgb(200, 200, 200);
+    border-radius: 100%;
+    padding: 2px 4px;
+    font-size: 10px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
+
 .deletePage {
     position: absolute;
     top: 50%;
@@ -327,6 +432,95 @@ input:-webkit-autofill:active{
 }
 
 
+
+.addEventContainer {
+    display: flex;
+    margin-top: 20px;
+    height: fit-content;
+    position: relative;
+    justify-content: space-between;
+}
+
+.addEventContainer input{
+    border: 1.5px solid var(--bs-primary-blue);
+    border-radius: 5px;
+    outline: none;
+    height: 100%;
+}
+
+.addEventContainer input[type="text"]{
+    padding: 5px;
+}
+
+.addEventContainer input[type="time"]{
+    padding-left: 5px;
+    color: var(--bs-primary-blue);
+}
+
+.weekDays-selector {
+    background-color: var(--background-color);
+    border: 1.5px solid var(--bs-primary-blue);
+    width: fit-content;
+    display: flex;
+    border-radius: 5px;
+    height: 100%;
+}
+  
+.weekDays-selector input {
+    display: none !important;
+}
+  
+.weekDays-selector input[type=checkbox] + label {
+    color: var(--bs-primary-blue);
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 25px;
+    font-size: 12px;
+}
+  
+
+.weekDays-selector input[type=checkbox]:not(:last-of-type) + label:not(:last-of-type) {
+    border-left: 0.5px solid var(--bs-primary-blue);
+}
+
+.weekDays-selector input[type=checkbox]:checked + label {
+    background: var(--bs-primary-blue);
+    color: var(--background-color);
+}
+
+.weekDays-selector input[type=checkbox]:hover:not(:checked) + label {
+    background: var(--bs-primary-blue);
+    color: var(--background-color);
+}
+
+.eventInputDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.eventInputDiv > label{
+    color: var(--bs-primary-blue);
+    font-size: 12px;
+    margin-bottom: 1px;
+    text-align: right;
+}
+
+#AddEventBtn {
+    background-color: var(--bs-primary-blue);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    padding:5px;
+    cursor: pointer;
+    transition-duration: .1s;
+    width: 100px;
+    font-size: 16px;
+    height: 50%;
+    margin-top: auto;
+    
+    
+}
 
 .loginContainer {
     position: absolute;
