@@ -589,3 +589,31 @@ input:-webkit-autofill:active{
     border-radius: 5px;
     cursor: pointer;
 }
+
+@media (max-width: 800px) {
+    .instructorPage {
+        width: 80%;       
+    }
+
+    .dataGrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    
+    .tableContainer {
+        overflow-x: scroll;
+    }
+
+    #searchDiv {
+        margin: 0 20px;
+    }
+
+    .resultsList {
+        width: 90%;
+    }
+
+    .addEventContainer {
+        overflow-x: scroll;
+        gap: 10px;
+    }
+}
